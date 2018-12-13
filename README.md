@@ -1,5 +1,6 @@
 # srproxy
-Get request proxy to.
+
+Simple request proxy.
 
 ### Installation:
 
