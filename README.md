@@ -4,7 +4,7 @@ Get request proxy to.
 ### Installation:
 
 ```
-npm i srproxy
+npm i srproxy -g
 ```
 
 ### Usage:
