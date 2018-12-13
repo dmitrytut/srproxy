@@ -1,0 +1,22 @@
+{
+  "name": "srproxy",
+  "description": "Simple Request Proxy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": {
+    "name": "Dmitry Tut",
+    "url": "https://github.com/dmitrytut"
+  },
+  "repository": "https://github.com/dmitrytut/srproxy",
+  "preferGlobal": true,
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.19.0"
+  },
+  "bin": {
+    "srproxy": "./srproxy"
+  },
+  "engines": {
+    "node": ">=7.6.0"
+  }
+}
