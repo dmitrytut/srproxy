@@ -1,0 +1,23 @@
+sudo: required
+
+language: node_js
+node_js: '10'
+cache: npm
+
+branches:
+    only:
+    - master
+
+install: npm ci
+
+script:
+- npm test
+
+jobs:
+  include:
+    - stage: test
+      script: echo 'test 1'
+    - # stage name not required, will continue to use `test`
+      script: echo 'test 2'
+    - stage: test3
+      script: echo 'test 3'
