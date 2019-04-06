@@ -1,0 +1,36 @@
+sudo: required
+
+language: node_js
+node_js: '10'
+cache: npm
+
+branches:
+    only:
+    - master
+
+install: npm ci
+
+script:
+- |
+    if [[ "${TRAVIS_PULL_REQUEST}" == "false" ]]; then
+        echo "Building bundle..."
+        npm run build
+    fi
+
+before_deploy:
+    - zip -q app.zip .
+
+after_deploy:
+    - rm app.zip
+
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_ACCESS_KEY"
+  region: "us-central-1"  
+  app: "ix-sb-api"
+  env: "IxSbApi-env"
+  bucket_name: "elasticbeanstalk-eu-central-1-266239764422"
+  zip-file: app.zip
+  skip_cleanup: true
