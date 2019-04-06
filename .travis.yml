@@ -17,7 +17,7 @@ script:
     fi
 
 before_deploy:
-    - zip -q app.zip .
+    - zip -q app.zip package-lock.json
 
 after_deploy:
     - rm app.zip
