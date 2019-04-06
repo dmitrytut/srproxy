@@ -14,7 +14,6 @@ script:
 - |
     if [[ "${TRAVIS_PULL_REQUEST}" == "false" ]]; then
         echo "Building bundle..."
-        npm run build
     fi
 
 before_deploy:
